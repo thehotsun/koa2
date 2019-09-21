@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+  align-items: center;
+  border: 1px solid #f3f3f3;
+  margin-bottom: 40px;
+}
+.searchInput {
+  height: 40px;
+  padding: 0 10px;
+}
+.searchWrap {
+  display: flex;
+  align-items: center;
+}
+.search {
+  margin-left: 20px;
+  padding: 0 20px;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  background: #509bff;
+  color: #fff;
+  text-align: center;
+}
+.loginAndRegister,
+.my {
+  display: flex;
+}
+.loginAndRegister > div:first-child::after,
+.my > div:first-child::after {
+  content: '·';
+  width: 10px;
+}

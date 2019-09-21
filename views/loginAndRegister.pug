@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/login.css')
+  div
+    .content
+      div
+        div 用户名：
+        input.userName(placeholder="请输入用户名" )
+      div
+        div 密码:
+        input.password(placeholder="请输入用户名" )
+      .button
+        div= buttonText
+  script(src="/js/login.js")
+  

@@ -1,0 +1,16 @@
+.postlists {
+  width: 640px;
+  border-top: 1px dotted #e4e6eb;
+  margin: 0 auto;
+  background: #fff;
+}
+.item {
+  padding: 10px 20px;
+  border-bottom: 1px dotted #e4e6eb;
+  border-left: 1px dotted #e4e6eb;
+  border-right: 1px dotted #e4e6eb;
+}
+.item_info {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,6 @@
+.i_content {
+  background: url('../images/background.png') no-repeat center center / 100%;
+}
+* {
+  box-sizing: border-box;
+}

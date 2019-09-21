@@ -1,0 +1,18 @@
+extends layout
+
+append head
+  link(rel="stylesheet", href='/stylesheets/history.css')
+  //- script(src="/js/index.js")
+
+block content
+  .i_content
+    .title 我的浏览历史
+    .lists
+      each val in listsdata
+        .item
+          a(href=val.url)
+            .postTitle= val.postTitle
+      
+    
+
+  

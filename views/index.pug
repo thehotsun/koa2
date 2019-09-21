@@ -1,0 +1,14 @@
+extends layout
+
+append head
+  link(rel="stylesheet", href='/stylesheets/index.css')
+  script(src="/js/index.js")
+
+block content
+  .i_content
+    include  header
+    include  postlists
+    include  footer
+    
+
+  

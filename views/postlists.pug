@@ -1,0 +1,12 @@
+.postlists
+  link(rel="stylesheet", href='/stylesheets/postlists.css')
+  
+  each val in listsdata
+    .item
+      a(href=val.url)
+        .item_title= val.title
+      .item_value= val.value
+      .item_info
+        a(href='/space/' + val.userName)
+          .item_userName= val.userName
+        .item_time= new Date(val.date)

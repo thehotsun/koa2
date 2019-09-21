@@ -1,0 +1,68 @@
+extends layout
+
+append head
+  link(rel="stylesheet", href='/stylesheets/postDetail.css')
+  script(src="/js/postDetail.js")
+
+      //- let date = new Date(numb)
+      //- var o = {
+      //-     M: date.getMonth() + 1,
+      //-     d: this.getDate(),
+      //-     h: date.getHours(),
+      //-     m: date.getMinutes(),
+      //-     s: date.getSeconds(),
+      //-     q: Math.floor((date.getMonth() + 3) / 3),
+      //-     S: date.getMilliseconds()
+      //- }
+      //- if (/(y+)/.test(format)) format = format.replace(RegExp.$1,(date.getFullYear() + "").substr(4 - RegExp.$1.length));
+      //- for (var k in o) if (new RegExp("(" + k + ")").test(format))format = format.replace(RegExp.$1,RegExp.$1.length == 1 ? o[k] :("00" + o[k]).substr(("" + o[k]).length));
+  //- - function format ( numb, format = 'yyyy-MM-dd hh-mm-ss') {this = new Date(numb);var o = { "M+": this.getMonth() + 1,"d+": this.getDate(), "h+": this.getHours(), "m+": this.getMinutes(), "s+": this.getSeconds(), "q+": Math.floor((this.getMonth() + 3) / 3),  "S": this.getMilliseconds()} return format;}
+
+block content
+  .postDetail(post_id= postData.post_id)
+    .postTitle= postData.title
+    .postValue= postData.value
+    a(href='/space/' + postData.userName)
+      .postUserName= postData.userName
+    .action
+      .comment 评论
+      //- - var date =  format(postData.date)
+      - var date =  new Date(postData.date)
+      .time= new Date(postData.date)
+    .postComments
+      each val in postData.comments
+        .item
+          .value= val.comment_value
+          a(href='/space/' + val.userName)
+            .userName= val.userName
+          .c_action
+            .c_comment(comment_id=val.comment_id) 评论
+            .c_time= new Date(val.date)
+          .replys 
+            if val.reply && val.reply.length
+              div
+                - var reply = val.reply || []
+                each item in reply
+                  .reply
+                    if item.reply
+                      .r_value= item.value
+                      .r_userName
+                        a(href='/space/' + item.userName)= item.userName
+                        span  回复
+                        a(href='/space/' + item.replyName)= item.replyName
+                    else
+                      .r_value= item.value
+                      a(href='/space/' + item.userName)
+                        .userName= item.userName
+                    .r_action
+                      .r_reply 回复
+                      .r_time= new Date(item.date)
+          .bottom
+            .myreply(style="width: 608px; min-height: 80px; z-index: 0;border: 1px solid #f2f2f2;margin-top: 20px;"  contenteditable="true")
+            .b_publish
+              div(comment_id=val.comment_id) 发表  
+    .mycomment(style="width: 708px; min-height: 220px; z-index: 0;border: 1px solid #f2f2f2;margin-top: 20px;"  contenteditable="true")
+    .publish 
+      div 发表    
+      
+                

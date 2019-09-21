@@ -1,0 +1,42 @@
+.item {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-around;
+}
+.item div:first-child {
+  width: 80px;
+  text-align: center;
+}
+.item div:last-child {
+  width: 400px;
+}
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.caseHim,
+.save {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  border: none !important;
+}
+.save div,
+.caseHim div {
+  /* display: flex; */
+  background: #b2b2b2;
+  color: #fff;
+  width: 140px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.case,
+.bcase,
+.collect {
+  padding: 20px 100px;
+  margin-top: 40px;
+}

@@ -1,0 +1,34 @@
+.content {
+  width: 800px;
+  height: 600px;
+  margin: 200px auto;
+}
+.content > div {
+  border: 1px solid #c5c5c5;
+  display: flex;
+  padding: 20px 40px;
+  justify-content: space-between;
+}
+.content > div > div {
+  height: 40px;
+  line-height: 40px;
+}
+input {
+  width: 600px;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+}
+.button {
+  justify-content: center !important;
+  align-items: center;
+  border: none !important;
+}
+.button div {
+  background: blue;
+  color: #fff;
+  width: 140px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+}

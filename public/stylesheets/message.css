@@ -1,0 +1,13 @@
+.title {
+  padding: 30px;
+  margin: 0 auto;
+}
+.lists {
+  margin-top: 40px;
+  padding: 30px 200px;
+}
+.item {
+  padding: 20px;
+  text-align: left;
+  border: 1px solid #f3f3ff;
+}

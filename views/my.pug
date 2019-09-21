@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/my.css')
+  div
+    .content
+    - var lists = ['头像', '用户名', '邮箱']
+    each val in lists
+      .item 
+        div= val 
+        if val === '头像'
+          div
+            img.avatar(src="/" + userInfo.avatar, alt="")
+            input.upload(type="file")
+        else if val === '用户名'
+          div
+            input.text(type="text" value=userInfo.userName)
+        else
+          div
+            input.text(type="text" value=userInfo.email)
+    .save 
+      div 保存
+    if userInfo.userName !== userName
+      .caseHim 
+        div #{(myCare && myCare.find(res => res.userName === userInfo.userName) ? '取消关注' : '关注他') || '关注他'} 
+    .case #{userInfo.userName === userName ?  '我的' : '他的'}关注
+      each val in userInfo.myCare || []
+        a(href='/space/' + val.userName)
+          .myCare= val.userName
+        
+    .bcase 关注#{userInfo.userName === userName ?  '我的' : '他的'}
+      each val in userInfo.careMe || []
+        a(href='/space/' + val.userName)
+          .careMe= val.userName
+        
+      
+    //- .collect 收藏夹
+    //-   each val in userInfo.collect || []
+    //-     a(href=val.url)
+    //-       .collect= val.title 
+        
+      
+  script(src="/js/my.js")

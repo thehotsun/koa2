@@ -1,0 +1,34 @@
+extends layout
+
+append head
+  link(rel="stylesheet", href='/stylesheets/message.css')
+  //- script(src="/js/index.js")
+
+block content
+  .i_content
+    .title 我的消息
+    .lists
+      each val in listsdata
+        .item
+          if (val.isFresh)
+            .fresh new！
+          if (val.isReply)
+            .title
+              a(href=val.url)
+                .userName= val.userName
+              | 评论了您的帖子
+              a(href=val.url)
+                .postTitle= val.postTitle
+            .content= val.value
+          else
+            .title
+              a(href='/space/' + val.userName)
+                .userName= val.userName
+              | 在帖子
+              a(href='/post/' + val.post_id)
+                .postTitle= val.postTitle
+              | 中回复了
+              a(href='/space/' + replyName)
+                 
+            .content= val.value    
+      
